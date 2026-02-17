@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Theory Lesson</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #2980b9; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 20px 0; border-radius: 8px; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .quiz-container { background: #eef2f3; padding: 20px; border-left: 5px solid #3498db; }
+        button { background: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #2980b9; }
+        #result { margin-top: 15px; font-weight: bold; color: #27ae60; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Lesson: Understanding Sets</h1>
+        <p>A <strong>Set</strong> is a collection of distinct objects. In mathematics, we use sets to group numbers, variables, or even physical items.</p>
+        
+        <h2>1. Basic Notation</h2>
+        <ul>
+            <li><strong>Element (&isin;):</strong> An object that belongs to a set.</li>
+            <li><strong>Empty Set (&empty;):</strong> A set with no elements.</li>
+            <li><strong>Subset (&sube;):</strong> When all elements of Set A are also in Set B.</li>
+        </ul>
+
+        
+
+        <h2>2. Visual Learning</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/tyDKR4FG3Yw" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="card quiz-container">
+        <h2>Practice Test</h2>
+        <p><strong>Question:</strong> If Set A = {1, 2, 3} and Set B = {3, 4, 5}, what is the <em>Intersection</em> (A &cap; B)?</p>
+        <input type="radio" name="q1" value="wrong"> {1, 2, 3, 4, 5}<br>
+        <input type="radio" name="q1" value="correct"> {3}<br>
+        <input type="radio" name="q1" value="wrong"> {1, 2, 4, 5}<br><br>
+        <button onclick="checkQuiz()">Submit Answer</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkQuiz() {
+            const selected = document.querySelector('input[name="q1"]:checked');
+            const resultDiv = document.getElementById('result');
+            if (selected) {
+                if (selected.value === "correct") {
+                    resultDiv.innerHTML = "Correct! The intersection is the set of elements common to both.";
+                    resultDiv.style.color = "#27ae60";
+                } else {
+                    resultDiv.innerHTML = "Not quite. Remember, intersection only looks for shared elements.";
+                    resultDiv.style.color = "#e74c3c";
+                }
+            } else {
+                alert("Please select an answer!");
+            }
+        }
+    </script>
+
+</body>
+</html>
